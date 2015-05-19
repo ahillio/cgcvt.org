@@ -1,0 +1,12 @@
+diff --git a/modules/media_wysiwyg/js/media_wysiwyg.filter.js b/modules/media_wysiwyg/js/media_wysiwyg.filter.js
+index 5ac10ec..ec12480 100644
+--- a/modules/media_wysiwyg/js/media_wysiwyg.filter.js
++++ b/modules/media_wysiwyg/js/media_wysiwyg.filter.js
+@@ -44,6 +44,7 @@
+           if (!media && media_definition.fid) {
+             Drupal.media.filter.ensureSourceMap();
+             var source = Drupal.settings.mediaSourceMap[media_definition.fid];
++            if (!source) continue;
+             media = document.createElement(source.tagName);
+             media.src = source.src;
+           }

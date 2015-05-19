@@ -1,0 +1,69 @@
+<?php
+/**
+ * @file
+ * Code for the admin_feature feature.
+ */
+
+include_once 'admin_feature.features.inc';
+
+/**
+ * Implements hook_date_formats(). Inserted by Alec, not by Features.
+ */
+function admin_feature_date_formats() {
+  return array(
+    // Creates a new format for a new, custom format type.
+    array(
+      'type' => 'short_month',
+      'format' => 'M',
+      'locales' => array(),
+    ),
+    // Defines a format and makes it available to core's short format type.
+    array(
+      'type' => 'normal',
+      'format' => 'M d, Y',
+      'locales' => array(),
+    ),
+    array(
+      'type' => 'day_number',
+      'format' => 'd',
+      'locales' => array(),
+    ),
+    array(
+      'type' => 'numbers',
+      'format' => 'm/d/Y',
+      'locales' => array(),
+    ),
+  );
+}
+
+/**
+ * Implements hook_date_format_types(). Inserted by Alec, not by Features.
+ */
+function admin_feature_date_format_types() {
+  return array(
+    'short_month' => t('Month Abbreviated'),
+    'normal' => t('Normal'),
+    'day_number' => t('Day Number'),
+    'numbers' => t('Numerical'),
+   );
+}
+
+
+/**
+ * Customize Media Stuff
+ */
+function admin_feature_preprocess_media_dialog_page(&$vars) {
+    if (isset($vars['page']['content']['system_main']['tabset']['tabs']['#primary'])
+		&& is_array($vars['page']['content']['system_main']['tabset']['tabs']['#primary'])) {
+		foreach ($vars['page']['content']['system_main']['tabset']['tabs']['#primary']
+		as $key => $element) {
+			$markup = $element['element']['#markup'];
+			$markup = str_replace('Library (MBP)','Media Library',$markup);
+			$markup = str_replace('My files (MBP)','My Media',$markup);
+			$vars['page']['content']['system_main']['tabset']['tabs']['#primary'][$key]['element']['#markup'] = $markup;
+//		dpm($element);
+//		$vars['page']['content']['system_main']['tabset']['tabs']['#primary'][$key]['element']['#markup'] = 'stuff';
+		}
+	}
+//	$vars['page']['content']['system_main']['tabset']['tabs']['#primary'] = array();
+}

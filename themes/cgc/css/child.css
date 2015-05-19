@@ -1,0 +1,294 @@
+/*
+File: child.css
+Author: Jonathan Kissam, jk@webskillet.com
+
+This file includes overwrites for the font, color and spacing properties you'll most likely want to override from the webskillet15 parent theme.  Otherwise, it is mostly an empty table of contents
+
+Table of contents:
+1. Framework
+2. Typography
+ 2.1 Body
+ 2.2 Headers
+ 2.3 Text
+ 2.4 Lists
+ 2.5 Links
+ 2.6 Images
+ 2.7 Tables
+ 2.8 Forms
+3. Header
+4. Navigation
+5. Highlighted
+6. Content
+ 6.1 Messages
+ 6.2 Admin tabs
+ 6.3 Nodes
+ 6.4 Fields
+ 6.5 Profiles
+ 6.6 Comments
+ 6.7 content formatting for specific pages
+ 6.7.1 search form & search results page
+7. Sidebars
+8. Pre-footers and Footer
+9. Media Queries (replicate same structure)
+10. IE Fixes
+*/
+
+/**
+ * 1. Framework
+ */
+
+#header-wrapper, #navigation-wrapper, #main-wrapper, #footer-wrapper { padding-top: 10px; padding-bottom: 10px; }
+.container { max-width: 980px; }
+/**
+ * 2. Typography
+ */
+
+/* 2.1 Body */
+body { color: #333; font: 93.75%/1.6em Arial, Helvetica, 'Helvetica Neue', sans-serif; }
+
+/* 2.2 Headers */
+h1#site-name { text-indent: -999em; height: 0; margin: 0; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; margin: 0 0 1em; font-family: 'Josefin Sans', sans-serif; }
+h1 { font-size: 1.5em; font-weight: 700; }
+h2 { font-size: 1.333em; font-weight: 700;}
+h3 { font-size: 1.2em; font-weight: 600; }
+h4 { font-size: 1.066em; font-weight: bold; }
+h5, h6 { font-size: 0.8em; font-weight: bold; margin-bottom: 0; }
+
+/* 2.3 Text */
+
+/* 2.4 Lists */
+
+/* 2.5 Links */
+a { text-decoration: none; }
+a:link { color: #44889f; }
+a:visited { color: #44889f; }
+.no-touch a:hover { color: #8559A5; }
+a:active { color: #44889f; }
+
+/* 2.6 Images */
+
+/* 2.7 Tables */
+
+/* 2.8 Forms */
+.form-item .description, .filter-guidelines { color: #999; }
+input, select, textarea { border: 1px solid #ccc; color: #333; font-family: Arial, Helvetica, 'Helvetica Neue', sans-serif; box-shadow: 0 1px 1px #eee inset; -moz-box-shadow: 0 1px 1px #eee inset; -webkit-box-shadow: 0 1px 1px #eee inset; }
+input:focus, select:focus, textarea:focus { box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; border-color: #333; }
+fieldset { border-color: #ccc; }
+legend { font: 1.333em Arial,Helvetica,'Helvetica Neue',sans-serif; color: #333; border: 1px solid #ccc; }
+.form-type-checkbox label, .form-type-radio label { color: #999; }
+input.form-checkbox:checked + label, input.form-radio:checked + label { color: #333; }
+input[type="submit"], button, a.button {
+  background: #dddddd; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dddddd', endColorstr='#ededed');
+  background: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#ededed));
+  color: #000;
+  text-shadow: 1px 1px 1px #fff;
+  border: 1px solid #ccc;
+}
+.no-touch input[type="submit"]:hover, .no-touch button:hover, .no-touch a.button:hover {
+  background: #ededed;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dddddd');
+  background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#dddddd));
+  background: -moz-linear-gradient(top,  #ededed,  #dddddd);
+  color: #000;
+}
+div.error, .error { color: #cc0000; }
+.form-item input.error, .form-item textarea.error, .form-item select.error { border: 1px solid #cc0000; }
+
+
+/**
+ * 3. Header
+ */
+#site-name-slogan, #site-name { text-indent: -999em; height: 0; }
+.banner-buttons li { list-style: none; display: inline; }
+.banner-buttons li a.button { color: white; text-shadow: none; }
+.banner-buttons li a.button:hover { color: white; text-shadow: none; }
+.banner-buttons li:nth-child(1) a { background: #006CAA; }
+.banner-buttons li:nth-child(1) a:hover { background: #007BBE; }
+.banner-buttons li:nth-child(2) a { background: #EE9122; }
+.banner-buttons li:nth-child(2) a:hover { background: #FF9924; }
+.banner-buttons li:nth-child(3) a { background: #8559A5; }
+.banner-buttons li:nth-child(3) a:hover { background: #9464B9; }
+@media screen and (max-width: 767px) {
+	a#logo { display: block; max-width: 300px; margin: 0 auto; }
+	.banner-buttons { max-width: 320px; margin: 20px auto; }
+	#block-views-banner-photo-block { display: none; }
+}
+@media screen and (min-width: 768px) {
+	#header { height: 180px; }
+	p#cgc-mailing-address { margin-top: 15px; color: grey; font-size: 1.2em; }
+	a#logo { width: 200px; display: block; position: absolute; top: 54px; left: 0; }
+	/*.region-header { position: absolute; right: 0; width: 540px; }*/
+	.banner-buttons { position: absolute; right: 0; top: 10px; }
+	#block-views-banner-photo-block { position: absolute; right: 0; width: 540px; }
+	.logged-in #block-views-banner-photo-block { top: 45px; }
+}
+@media screen and (min-width: 992px) {
+	#header { height: 222px; }
+	a#logo { width: 265px; }
+	/*.region-header { width: 640px; }*/
+	#block-views-banner-photo-block { width: 700px; }
+}
+
+/**
+ * 4. Navigation
+ */
+#navigation { background: #6AAB28; color: white; }
+#navigation li ul.main-menu li { line-height: 40px; }
+.om-link { font-size: 1.3em; }
+@media screen and (min-width: 768px) {
+#navigation { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; margin-bottom: 10px; }
+ul#om-menu-megamenu { margin-left: 8px; }
+.leaf-who-we-are .om-maximenu-content.closed { right: -18px; }
+}
+@media screen and (min-width:992px) {
+ul#om-menu-megamenu { margin-left: 42px; } 
+.leaf-who-we-are .om-maximenu-content.closed { /* right: -135px; */ }
+}
+
+
+/* om-maximenu */
+.om-maximenu.om-maximenu-main-menu ul.om-menu li.om-leaf,
+.om-maximenu.om-maximenu-main-menu ul.om-menu li.om-leaf .om-link { min-height: 40px; }
+.om-maximenu-no-style .om-maximenu-middle { background: #6AAB28; border: solid 2px #6AAB28; border-top: none; }
+.om-maximenu-no-style .om-maximenu-middle-right { padding: 1em; }
+.om-maximenu-no-style .om-maximenu-middle a { color: white; }
+.om-maximenu-no-style .om-maximenu-middle a:hover { font-weight: bold; letter-spacing: -.03em; }
+/**
+ * 5. Highlighted
+ */
+
+/**
+ * 6. Content
+ */
+
+/* 6.1 Messages */
+
+/* 6.2 Admin tabs */
+
+/* 6.3 Nodes */
+
+/* social media links */
+
+/* 6.4 Fields */
+
+/* 6.5 Profiles */
+
+/* 6.6 Comments */
+
+/* 6.7 content formatting for specific pages */
+
+/* 6.7.1 search form & search results page */
+
+
+/**
+ * 7. Sidebars
+ */
+
+.sidebar .block { margin-bottom: 2em;  background-color: rgb(245, 251, 231); padding: 10px; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; }
+#sidebar-first .view-pages a { width: 100%; display: block; padding: 2px 7px; }
+#sidebar-first .view-pages a.active { background-color: rgb(106, 171, 40); color: white; }
+@media and screen (min-width: 768) { 
+	#sidebar-first.col-sm-pull-8 { padding-left: 40px; } 
+	#sidebar-first .block { margin-left: 10px; }
+}
+.flex-direction-nav a:before { position: relative; top: 10px; }
+
+/**
+ * 8. Pre-footers, utility and footer
+ */
+
+/* 8.1 Prefooter 1 */
+
+/* 8.2 Prefooter 2 */
+#prefooter2 { background: rgb(106, 171, 40); color: white; border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; padding: 20px 30px; }
+#prefooter2 p { text-align: center; margin: 0; }
+#prefooter2 .region a { color: white; }
+#prefooter2 .block h2 a { background-size: 40px; background-repeat: no-repeat; display: inline-block; height: 40px; text-indent: 49px; padding-top: 10px; }
+#prefooter2 #block-block-4 h2 a { background-image: url(../images/fb-icon.png); }
+#prefooter2 #block-block-7 h2 a { background-image: url(../images/gallery-icon.png); background-position: 0 3px; }
+#prefooter2 #block-block-8 h2 a { background-image: url(../images/blog-icon.png); }
+/* 8.3 Utility */
+
+/* 8.4 Footer */
+#site-credit a { color: grey; }
+#site-credit a:hover { color: darkgrey; }
+
+/**
+ * 9. Media Queries
+ */
+
+/* 9.1 Larger than a Samsung galaxy phone in portrait mode */
+@media screen and (min-width: 361px) {
+
+}
+
+/* 9.2 Larger than an iPhone in landscape mode */
+@media screen and (min-width: 481px) {
+
+}
+
+/* 9.3 iPad in portrait mode or larger */
+@media screen and (min-width: 768px) {
+
+	/* 4. Navigation */
+	/* if you want to display mobile menu on tablets, remove all the below from child.css,
+	   copy entire style.css from parent theme to child theme,
+	   add style.css in child theme .info file,
+	   and move the navigation section from the tablet query to the desktop query. */
+	#navigation { height: 40px; }
+	/* #navigation ul { height: 40px; line-height: 40px; } */
+	#navigation ul.main-menu li { margin: 5px 0; padding: 0; height: 30px; line-height: 30px; }
+	#navigation ul.main-menu li a { padding: 0 1em; }
+	#navigation ul.main-menu li.first a { padding-left: 0; }
+	#navigation ul.main-menu li.first { border-left: 0; }
+
+	/* Handles drop-down menus
+	top-margin = bottom-margin of parent li; top = height of parent li - top-margin */
+	#navigation li ul.main-menu { top: 25px; width: 200px; margin: 5px 0 0; padding: 0.5em; background: #fff; }
+	#navigation li ul.main-menu li a, #navigation li ul.main-menu li.first a { padding: 5px 0.5em; }
+
+	/* om-maximenu */
+	.om-maximenu ul.om-menu { height: 40px; line-height: 40px; }
+	.om-maximenu ul.om-menu li.om-leaf .om-link { padding: .2em .7em; }
+	.om-maximenu ul.om-menu li.om-leaf.first .om-link { padding-left: 0; }
+	.om-maximenu-no-style .om-maximenu-content { top: 40px; }
+
+}
+
+/* 9.4 full screen */
+@media screen and (min-width: 992px) {
+	.om-maximenu ul.om-menu li.om-leaf .om-link { padding: .2em 2em; }
+}
+
+/* 9.5 wide screen */
+@media screen and (min-width: 1200px) {
+
+}
+
+
+
+/**
+ * 10. IE fixes
+ */
+
+/* Homepage */
+@media screen and (min-width: 768px) { #main.container { padding: 0; } }
+.front #page .views-row { border-radius: 30px; -moz-border-radius: 30px; -webkit-border-radius: 30px; color: white; margin: 15px 0; position: relative; padding: 20px 30px; }
+.front #page .views-row a { text-decoration: underline; }
+.front #page .views-row a:hover { color: lightgrey; }
+.front #page .views-row-1 { color: #006CAA; }
+.front #page .views-row-2 { color: #CF1358; }
+.front #page .views-row-3 { color: #8559A5; }
+.front #page .views-row-4 { color: #EE9122; }
+.front #page .views-row img { border-radius: 15px; -moz-border-radius: 15px; -webkit-border-radius: 15px; border: solid 2px; }
+.front #page .views-row p { color: #333; }
+@media screen and (min-width: 768px) { 
+.front #page .cgcwrapper { position: absolute; right: 15px; max-width: 55%; font-size: 1.3em; top: 42px; } 
+.front #page .views-row img { max-width: 40%; }
+}
+@media screen and (min-width: 992px) {
+.front #page .cgcwrapper { max-width: 45%; right: 21px; }
+.front #page .views-row img { max-width: 50%; width: 50%; }
+}

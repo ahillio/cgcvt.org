@@ -1,0 +1,7 @@
+# Ignore these:
+/files/*
+/private/*
+settings.php
+local.settings.php
+local.settings.php~
+drushrc.php
