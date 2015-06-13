@@ -1,0 +1,34 @@
+@media screen and (min-width: 768px)
+.front #page .cgcwrapper {
+  position: absolute;
+  left: 31px;
+  max-width: 63%;
+  font-size: .9em;
+  top: 20px;
+}
+
+
+front #page .views-row img {
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border: solid 2px;
+  left: 374px;
+  position: relative;
+}
+@media screen and (min-width: 768px) 
+.front #page .views-row img {
+  max-width: 31%;
+}
+
+
+@media screen and (min-width: 768px)
+.front #page .cgcwrapper {
+  position: absolute;
+  left: 31px;
+  max-width: 63%;
+  font-size: .9em;
+  top: 20px;
+}
+
+

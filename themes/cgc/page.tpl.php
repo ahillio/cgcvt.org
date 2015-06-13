@@ -40,7 +40,8 @@
 
     <div id="navigation-wrapper">
       <nav id="navigation" role="navigation" class="clearfix container <?php print $navigation_class; ?>">
-        <?php print $main_menu_tree;  ?>
+	<h2 class="navigation-header collapsed"><i class="fa fa-bars"></i><span>Menu</span></h2>
+	<?php print $main_menu_tree;  ?>
       </nav> <!-- /#navigation -->
     </div> <!-- /#navigation-wrapper -->
 
@@ -119,9 +120,9 @@
 <div id="footer-wrapper">
   <footer id="footer" role="contentinfo" class="container">
     <?php print render($page['footer']) ?>
-	<div id="site-credit"><a href="http://www.webskillet.com">website by Webskillet</a></div>
   </footer> <!-- /#footer -->
 </div>
 
 </div> <!-- /#wrapper -->
+	<div id="site-credit"><a href="http://www.webskillet.com">website by Webskillet</a></div>
 <?php endif; /* !$ajax */ ?>

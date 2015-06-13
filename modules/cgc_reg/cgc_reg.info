@@ -1,0 +1,6 @@
+name = "CGC Registration"
+description = "Customize the registration forms"
+core = 7.x
+package = "custom"
+
+dependencies[] = entityform
