@@ -289,6 +289,7 @@ div#site-credit {
 	.om-maximenu ul.om-menu { height: 40px; line-height: 40px; }
 	.om-maximenu ul.om-menu li.om-leaf .om-link { padding: .2em .7em; }
 	.om-maximenu ul.om-menu li.om-leaf.first .om-link { padding-left: 0; }
+	.om-maximenu ul.om-menu li.om-leaf.last .om-link { padding-right: 0; }
 	.om-maximenu-no-style .om-maximenu-content { top: 40px; }
 	ul#om-menu-megamenu { font-size: .9em; }
 
@@ -339,3 +340,17 @@ div#site-credit {
 .front #page .cgcwrapper { max-width: 45%; right: 35px; }
 .front #page .views-row img { margin-left: 40px; }
 }
+
+
+/**
+ * BLOG
+ */
+@media screen and (max-width: 519px) {
+	.ds-2col > .group-left { width: 100%; }
+	.ds-2col > .group-right { width: 100%; }
+}
+@media screen and (min-width: 520px) {
+	.ds-2col > .group-left { float: left; width: 74%; margin-right: 1%; }
+	.ds-2col > .group-right { width: 25%; }
+}
+
